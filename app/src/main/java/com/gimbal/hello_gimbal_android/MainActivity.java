@@ -35,12 +35,14 @@ public class MainActivity extends ActionBarActivity {
         placeEventListener = new PlaceEventListener() {
             @Override
             public void onVisitStart(Visit visit) {
+                super.onVisitStart(visit);
                 listAdapter.add(String.format("Start Visit for %s", visit.getPlace().getName()));
                 listAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onVisitEnd(Visit visit) {
+                super.onVisitEnd(visit);
                 listAdapter.add(String.format("End Visit for %s", visit.getPlace().getName()));
                 listAdapter.notifyDataSetChanged();
             }
